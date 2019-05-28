@@ -12,7 +12,17 @@ export default class MainContainer extends Component {
     email: ''
   };
 
+  // Handle fields change
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
+  };
+
   render() {
-    return <InitialForm />;
+    return (
+      <InitialForm
+        handleChange={this.handleChange}
+        values={{ ...this.state }}
+      />
+    );
   }
 }
