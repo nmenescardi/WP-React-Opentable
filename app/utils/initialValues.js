@@ -20,4 +20,15 @@ const timeList = [
   }
 ];
 
-export { restaurantList, timeList };
+const peopleList = [
+  {
+    id: 1,
+    name: '1 Person'
+  },
+  {
+    id: 2,
+    name: '2 People'
+  }
+];
+
+export { restaurantList, timeList, peopleList };

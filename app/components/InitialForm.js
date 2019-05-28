@@ -4,8 +4,10 @@ import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 /* import RaisedButton from 'material-ui/RaisedButton'; */
 import TimeList from './fields/TimeList';
+import RestaurantList from './fields/RestaurantList';
+import PeopleList from './fields/PeopleList';
 
-import { timeList } from '../utils/initialValues';
+import { timeList, restaurantList, peopleList } from '../utils/initialValues';
 
 export default class InitialForm extends Component {
   render() {
@@ -15,15 +17,32 @@ export default class InitialForm extends Component {
       <MuiThemeProvider>
         <Fragment>
           <AppBar title="Make a Reservation" showMenuIconButton={false} />
+          <RestaurantList
+            restaurantList={restaurantList}
+            handleChange={handleChange}
+            values={values}
+          />
+          <br />
           <TextField
-            hintText="Enter Your First Name"
-            floatingLabelText="First Name"
-            onChange={handleChange('firstName')}
-            defaultValue={values.firstName}
+            id="date"
+            label="Date"
+            type="date"
+            onChange={handleChange('date')}
+            defaultValue="2019-06-24" // Today or state
+            /* className={classes.textField} */
+            InputLabelProps={{
+              shrink: true
+            }}
           />
           <br />
           <TimeList
             timeList={timeList}
+            handleChange={handleChange}
+            values={values}
+          />
+          <br />
+          <PeopleList
+            peopleList={peopleList}
             handleChange={handleChange}
             values={values}
           />
