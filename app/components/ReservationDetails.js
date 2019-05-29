@@ -1,3 +1,11 @@
+import React, { Component } from 'react';
+
+export default class ReservationDetails extends Component {
+  render() {
+    return <div>bbbbbbbbbbb</div>;
+  }
+}
+
 /*
 import TextField from 'material-ui/TextField';
 

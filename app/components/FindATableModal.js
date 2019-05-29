@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
 import RaisedButton from 'material-ui/RaisedButton';
-import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -9,7 +8,14 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+import FindATableForm from './FindATableForm';
+import ReservationDetails from './ReservationDetails';
+
 export default class FindATableModal extends Component {
+  state = {
+    firstStep: true
+  };
+
   render() {
     const { modalOpen, closeFindATableModal, restaurant } = this.props;
 
@@ -29,13 +35,14 @@ export default class FindATableModal extends Component {
                 <DialogContentText>
                   Please, confirm information to proceed with the reservation.
                 </DialogContentText>
+
+                {this.state.firstStep ? (
+                  <FindATableForm />
+                ) : (
+                  <ReservationDetails />
+                )}
               </DialogContent>
               <DialogActions>
-                {/* <Button onClick={handleClose} color="primary">
-              Cancel
-            </Button>
-          */}
-
                 <RaisedButton
                   label="Close"
                   primary={true}
