@@ -11,7 +11,7 @@ import { timeList, restaurantList, peopleList } from '../utils/initialValues';
 
 export default class InitialForm extends Component {
   render() {
-    const { handleChange, values, findATableModal } = this.props;
+    const { handleChange, values, openFindATableModal } = this.props;
 
     return (
       <MuiThemeProvider>
@@ -48,7 +48,7 @@ export default class InitialForm extends Component {
           <RaisedButton
             label="Find a Table"
             primary={true}
-            onClick={findATableModal}
+            onClick={openFindATableModal}
           />
         </Fragment>
       </MuiThemeProvider>

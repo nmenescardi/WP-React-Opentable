@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import InitialForm from './InitialForm';
+import FindATableModal from './FindATableModal';
+// import custom modal. Pass modalOpen. Modal have both tabs/forms and its own state
+
 export default class MainContainer extends Component {
   state = {
     restaurant: '',
@@ -9,7 +12,8 @@ export default class MainContainer extends Component {
     firstname: '',
     lastname: '',
     phone: '',
-    email: ''
+    email: '',
+    modalOpen: false
   };
 
   // Handle fields change
@@ -17,17 +21,27 @@ export default class MainContainer extends Component {
     this.setState({ [input]: e.target.value });
   };
 
-  findATableModal = () => {
-    return;
+  openFindATableModal = () => {
+    this.setState({ modalOpen: true });
+  };
+
+  closeFindATableModal = () => {
+    this.setState({ modalOpen: false });
   };
 
   render() {
     return (
-      <InitialForm
-        handleChange={this.handleChange}
-        values={{ ...this.state }}
-        findATableModal={this.findATableModal}
-      />
+      <Fragment>
+        <InitialForm
+          handleChange={this.handleChange}
+          values={{ ...this.state }}
+          openFindATableModal={this.openFindATableModal}
+        />
+        <FindATableModal
+          modalOpen={this.state.modalOpen}
+          closeFindATableModal={this.closeFindATableModal}
+        />
+      </Fragment>
     );
   }
 }
