@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const PeopleList = ({ peopleList, values, handleChange }) => {
   return (
-    <FormControl>
+    <FormControl fullWidth>
       <InputLabel htmlFor="people-selector">People</InputLabel>
       <Select
         value={values.people}

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
-/* import RaisedButton from 'material-ui/RaisedButton'; */
+import RaisedButton from 'material-ui/RaisedButton';
 import TimeList from './fields/TimeList';
 import RestaurantList from './fields/RestaurantList';
 import PeopleList from './fields/PeopleList';
@@ -11,7 +11,7 @@ import { timeList, restaurantList, peopleList } from '../utils/initialValues';
 
 export default class InitialForm extends Component {
   render() {
-    const { handleChange, values } = this.props;
+    const { handleChange, values, findATableModal } = this.props;
 
     return (
       <MuiThemeProvider>
@@ -27,12 +27,10 @@ export default class InitialForm extends Component {
             id="date"
             label="Date"
             type="date"
+            fullWidth
             onChange={handleChange('date')}
             defaultValue="2019-06-24" // Today or state
             /* className={classes.textField} */
-            InputLabelProps={{
-              shrink: true
-            }}
           />
           <br />
           <TimeList
@@ -45,6 +43,12 @@ export default class InitialForm extends Component {
             peopleList={peopleList}
             handleChange={handleChange}
             values={values}
+          />
+          <br />
+          <RaisedButton
+            label="Find a Table"
+            primary={true}
+            onClick={findATableModal}
           />
         </Fragment>
       </MuiThemeProvider>

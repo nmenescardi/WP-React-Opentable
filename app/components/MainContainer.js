@@ -17,11 +17,16 @@ export default class MainContainer extends Component {
     this.setState({ [input]: e.target.value });
   };
 
+  findATableModal = () => {
+    return;
+  };
+
   render() {
     return (
       <InitialForm
         handleChange={this.handleChange}
         values={{ ...this.state }}
+        findATableModal={this.findATableModal}
       />
     );
   }

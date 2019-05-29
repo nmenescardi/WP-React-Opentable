@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const RestaurantList = ({ restaurantList, values, handleChange }) => {
   return (
-    <FormControl>
+    <FormControl fullWidth>
       <InputLabel htmlFor="restaurant-selector">Restaurant</InputLabel>
       <Select
         value={values.restaurant}

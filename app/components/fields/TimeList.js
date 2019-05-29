@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const TimeList = ({ timeList, values, handleChange }) => {
   return (
-    <FormControl>
+    <FormControl fullWidth>
       <InputLabel htmlFor="time-selector">Time</InputLabel>
       <Select
         value={values.time}
