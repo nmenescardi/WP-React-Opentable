@@ -4,12 +4,12 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const PeopleList = ({ peopleList, values, handleChange }) => {
+const PeopleList = ({ peopleList, people, handleChange }) => {
   return (
     <FormControl fullWidth>
       <InputLabel htmlFor="people-selector">People</InputLabel>
       <Select
-        value={values.people}
+        value={people}
         onChange={handleChange('people')}
         inputProps={{
           name: 'people',

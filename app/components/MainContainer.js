@@ -34,12 +34,13 @@ export default class MainContainer extends Component {
       <Fragment>
         <InitialForm
           handleChange={this.handleChange}
-          values={{ ...this.state }}
           openFindATableModal={this.openFindATableModal}
+          {...this.state}
         />
         <FindATableModal
-          modalOpen={this.state.modalOpen}
+          handleChange={this.handleChange}
           closeFindATableModal={this.closeFindATableModal}
+          {...this.state}
         />
       </Fragment>
     );

@@ -4,12 +4,12 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const RestaurantList = ({ restaurantList, values, handleChange }) => {
+const RestaurantList = ({ restaurantList, restaurant, handleChange }) => {
   return (
     <FormControl fullWidth>
       <InputLabel htmlFor="restaurant-selector">Restaurant</InputLabel>
       <Select
-        value={values.restaurant}
+        value={restaurant}
         onChange={handleChange('restaurant')}
         inputProps={{
           name: 'restaurant',

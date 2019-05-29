@@ -4,12 +4,12 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const TimeList = ({ timeList, values, handleChange }) => {
+const TimeList = ({ timeList, time, handleChange }) => {
   return (
     <FormControl fullWidth>
       <InputLabel htmlFor="time-selector">Time</InputLabel>
       <Select
-        value={values.time}
+        value={time}
         onChange={handleChange('time')}
         inputProps={{
           name: 'time',

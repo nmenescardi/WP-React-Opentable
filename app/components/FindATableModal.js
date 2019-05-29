@@ -11,7 +11,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export default class FindATableModal extends Component {
   render() {
-    const { modalOpen, closeFindATableModal } = this.props;
+    const { modalOpen, closeFindATableModal, restaurant } = this.props;
 
     return (
       modalOpen && (
@@ -22,20 +22,13 @@ export default class FindATableModal extends Component {
               onClose={closeFindATableModal}
               aria-labelledby="form-dialog-title"
             >
-              <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+              <DialogTitle id="form-dialog-title">
+                {restaurant && `Reservation at ${restaurant}`}
+              </DialogTitle>
               <DialogContent>
                 <DialogContentText>
-                  To subscribe to this website, please enter your email address
-                  here. We will send updates occasionally.
+                  Please, confirm information to proceed with the reservation.
                 </DialogContentText>
-                <TextField
-                  autoFocus
-                  margin="dense"
-                  id="name"
-                  label="Email Address"
-                  type="email"
-                  fullWidth
-                />
               </DialogContent>
               <DialogActions>
                 {/* <Button onClick={handleClose} color="primary">

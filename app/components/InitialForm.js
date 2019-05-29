@@ -11,7 +11,13 @@ import { timeList, restaurantList, peopleList } from '../utils/initialValues';
 
 export default class InitialForm extends Component {
   render() {
-    const { handleChange, values, openFindATableModal } = this.props;
+    const {
+      handleChange,
+      openFindATableModal,
+      restaurant,
+      time,
+      people
+    } = this.props;
 
     return (
       <MuiThemeProvider>
@@ -20,7 +26,7 @@ export default class InitialForm extends Component {
           <RestaurantList
             restaurantList={restaurantList}
             handleChange={handleChange}
-            values={values}
+            restaurant={restaurant}
           />
           <br />
           <TextField
@@ -36,13 +42,13 @@ export default class InitialForm extends Component {
           <TimeList
             timeList={timeList}
             handleChange={handleChange}
-            values={values}
+            time={time}
           />
           <br />
           <PeopleList
             peopleList={peopleList}
             handleChange={handleChange}
-            values={values}
+            people={people}
           />
           <br />
           <RaisedButton
