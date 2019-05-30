@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import InitialForm from './InitialForm';
 import FindATableModal from './FindATableModal';
-// import custom modal. Pass modalOpen. Modal have both tabs/forms and its own state
+import { Provider } from '../utils/context';
 
 export default class MainContainer extends Component {
   state = {
@@ -29,9 +29,14 @@ export default class MainContainer extends Component {
     this.setState({ modalOpen: false });
   };
 
+  getContext = () => ({
+    ...this.state,
+    handleChange: this.handleChange
+  });
+
   render() {
     return (
-      <Fragment>
+      <Provider value={this.getContext()}>
         <InitialForm
           handleChange={this.handleChange}
           openFindATableModal={this.openFindATableModal}
@@ -42,7 +47,7 @@ export default class MainContainer extends Component {
           closeFindATableModal={this.closeFindATableModal}
           {...this.state}
         />
-      </Fragment>
+      </Provider>
     );
   }
 }
