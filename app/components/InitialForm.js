@@ -3,13 +3,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import TimeList from './fields/TimeList';
-import RestaurantList from './fields/RestaurantList';
-import PeopleList from './fields/PeopleList';
-
+import FieldList from './fields/FieldList';
+import { withContext } from '../utils/context';
 import { timeList, restaurantList, peopleList } from '../utils/initialValues';
 
-export default class InitialForm extends Component {
+class InitialForm extends Component {
   render() {
     const {
       handleChange,
@@ -23,10 +21,10 @@ export default class InitialForm extends Component {
       <MuiThemeProvider>
         <Fragment>
           <AppBar title="Make a Reservation" showMenuIconButton={false} />
-          <RestaurantList
-            restaurantList={restaurantList}
-            handleChange={handleChange}
-            restaurant={restaurant}
+          <FieldList
+            list={restaurantList}
+            fieldLabel="restaurant"
+            value={restaurant}
           />
           <br />
           <TextField
@@ -39,17 +37,9 @@ export default class InitialForm extends Component {
             /* className={classes.textField} */
           />
           <br />
-          <TimeList
-            timeList={timeList}
-            handleChange={handleChange}
-            time={time}
-          />
+          <FieldList list={timeList} fieldLabel="time" value={time} />
           <br />
-          <PeopleList
-            peopleList={peopleList}
-            handleChange={handleChange}
-            people={people}
-          />
+          <FieldList list={peopleList} fieldLabel="people" value={people} />
           <br />
           <RaisedButton
             label="Find a Table"
@@ -61,3 +51,5 @@ export default class InitialForm extends Component {
     );
   }
 }
+
+export default withContext(InitialForm);

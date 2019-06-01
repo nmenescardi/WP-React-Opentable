@@ -7,11 +7,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import { withContext } from '../utils/context';
 import FindATableForm from './FindATableForm';
 import ReservationDetails from './ReservationDetails';
 
-export default class FindATableModal extends Component {
+class FindATableModal extends Component {
   state = {
     firstStep: true
   };
@@ -56,3 +56,5 @@ export default class FindATableModal extends Component {
     );
   }
 }
+
+export default withContext(FindATableModal);

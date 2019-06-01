@@ -31,22 +31,16 @@ export default class MainContainer extends Component {
 
   getContext = () => ({
     ...this.state,
-    handleChange: this.handleChange
+    handleChange: this.handleChange,
+    openFindATableModal: this.openFindATableModal,
+    closeFindATableModal: this.closeFindATableModal
   });
 
   render() {
     return (
       <Provider value={this.getContext()}>
-        <InitialForm
-          handleChange={this.handleChange}
-          openFindATableModal={this.openFindATableModal}
-          {...this.state}
-        />
-        <FindATableModal
-          handleChange={this.handleChange}
-          closeFindATableModal={this.closeFindATableModal}
-          {...this.state}
-        />
+        <InitialForm />
+        <FindATableModal />
       </Provider>
     );
   }

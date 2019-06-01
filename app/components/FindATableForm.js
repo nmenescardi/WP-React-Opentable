@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import TimeList from './fields/TimeList';
-import PeopleList from './fields/PeopleList';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import { timeList, peopleList } from '../utils/initialValues';
@@ -8,7 +6,7 @@ import { withContext } from '../utils/context';
 
 class FindATableForm extends Component {
   render() {
-    console.log('this.props', this.props);
+    //console.log('this.props', this.props);
     return (
       <Fragment>
         <TextField
