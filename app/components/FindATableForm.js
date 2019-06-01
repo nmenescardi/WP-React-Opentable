@@ -3,39 +3,23 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import { timeList, peopleList } from '../utils/initialValues';
 import { withContext } from '../utils/context';
+import FieldList from './fields/FieldList';
+import DateField from './fields/DateField';
 
 class FindATableForm extends Component {
   render() {
-    //console.log('this.props', this.props);
+    const { time, people } = this.props;
+
     return (
       <Fragment>
-        <TextField
-          id="date"
-          label="Date"
-          type="date"
-          fullWidth
-          /* onChange={handleChange('date')} */
-          defaultValue="2019-06-24" // Today or state
-          /* className={classes.textField} */
-        />
-        <br />
-        {/*  <TimeList
-          timeList={timeList}
-          handleChange={handleChange}
-            time={time}
-        />
-        <br />
-        <PeopleList
-          peopleList={peopleList}
-          handleChange={handleChange}
-            people={people}
-        />
-        <br />
+        <DateField />
+        <FieldList list={timeList} fieldLabel="time" value={time} />
+        <FieldList list={peopleList} fieldLabel="people" value={people} />
         <RaisedButton
-          label="Find a Table"
+          label="Find a table"
           primary={true}
-          onClick={openFindATableModal}
-        /> */}
+          /* onClick={closeFindATableModal} */
+        />
       </Fragment>
     );
   }

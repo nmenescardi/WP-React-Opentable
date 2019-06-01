@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
-import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
+//import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -42,13 +41,6 @@ class FindATableModal extends Component {
                   <ReservationDetails />
                 )}
               </DialogContent>
-              <DialogActions>
-                <RaisedButton
-                  label="Close"
-                  primary={true}
-                  onClick={closeFindATableModal}
-                />
-              </DialogActions>
             </Dialog>
           </Fragment>
         </MuiThemeProvider>

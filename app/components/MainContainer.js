@@ -6,7 +6,7 @@ import { Provider } from '../utils/context';
 export default class MainContainer extends Component {
   state = {
     restaurant: '',
-    date: '',
+    date: new Date().toJSON().slice(0, 10),
     time: '',
     people: '',
     firstname: '',
